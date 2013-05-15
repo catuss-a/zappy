@@ -1,12 +1,3 @@
-##
-## Makefile for zappy in /home/moreau_c//repo/zappy
-## 
-## Made by christopher moreau
-## Login   <moreau_c@epitech.net>
-## 
-## Started on  Thu Jun  9 14:50:56 2011 christopher moreau
-## Last update Sun Jul 10 23:10:59 2011 ghjuvan-carlu bianchi
-##
 
 SERVER			=	server
 CLIENT			=	client
