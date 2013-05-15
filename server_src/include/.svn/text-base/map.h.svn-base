@@ -1,0 +1,24 @@
+/*
+** map.h for map in /home/catuss_a//workspace/zappy
+** 
+** Made by axel catusse
+** Login   <catuss_a@epitech.net>
+** 
+** Started on  Fri Jun 10 18:39:48 2011 axel catusse
+** Last update Sat Jun 11 21:47:20 2011 axel catusse
+*/
+
+#ifndef		MAP_H_
+# define	MAP_H_
+
+typedef unsigned int	t_cell[MAX_ITEMS];
+
+typedef struct		s_map
+{
+  unsigned int		width;
+  unsigned int		height;
+  unsigned int		nb_cells;
+  t_cell		*map;
+}			t_map;
+
+#endif		/* !MAP_H_ */

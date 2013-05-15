@@ -1,0 +1,35 @@
+/*
+** sock_receive.c for bomberman in /home/lamais_g//Projects/SystemUnix/libsock
+** 
+** Made by gauthier lamaison
+** Login   <lamais_g@epitech.net>
+** 
+** Started on  Tue Jun  7 16:15:32 2011 gauthier lamaison
+** Last update Sat Jul  9 18:38:59 2011 gauthier lamaison
+*/
+
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
+#include "libsock.h"
+#include "private_libsock.h"
+#include "list_wrapper.h"
+
+extern t_sockserver	*g_server;
+
+char			*sock_receive(int sock)
+{
+  char			*rcv;
+  t_users		*user;
+
+  if (!(user = list_find_if(&g_server->users, (void*)sock,
+			       sock_find_user)))
+    return (NULL);
+  if (buffer_is_ready(user->rc_buffer))
+    {
+      if ((rcv = read_from_buffer(user->rc_buffer)))
+	incr_ndx(user->rc_buffer, strlen(rcv));
+      return (rcv);
+    }
+  return (NULL);
+}

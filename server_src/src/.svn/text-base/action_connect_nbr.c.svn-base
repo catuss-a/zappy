@@ -1,0 +1,27 @@
+/*
+** action_connect_nbr.c for connect_nbr in /home/catuss_a//workspace/zappy/server_src
+** 
+** Made by axel catusse
+** Login   <catuss_a@epitech.net>
+** 
+** Started on  Sun Jun 12 19:43:31 2011 axel catusse
+** Last update Thu Jun 23 17:07:24 2011 gauthier lamaison
+*/
+
+#include <stdio.h>
+
+#include "game.h"
+
+int		action_connect_nbr(t_game *game, t_player *player,
+				   __attribute__((unused))unsigned int idx_action)
+{
+  char		msg[16];
+
+  (void)game;
+  (void)player;
+  (void)game;
+  printf("connect_nbr\n");
+  sprintf(msg, "%d\n", player->team->nb_clients);
+  sock_send(player->sock, msg);
+  return (SUCCESS_VALUE);
+}

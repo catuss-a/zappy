@@ -1,0 +1,18 @@
+/*
+** sock_accept.c for libsock in /home/lamais_g//Projects/SystemUnix/libsock
+**
+** Made by gauthier lamaison
+** Login   <lamais_g@epitech.net>
+**
+** Started on  Mon Jun  6 15:25:45 2011 gauthier lamaison
+** Last update Thu Jun 23 17:03:46 2011 gauthier lamaison
+*/
+
+#include "libsock.h"
+
+extern t_sockserver		*g_server;
+
+void		sock_set_timeout(int timeout)
+{
+  g_server->timeout = timeout;
+}

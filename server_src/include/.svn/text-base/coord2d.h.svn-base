@@ -1,0 +1,20 @@
+/*
+** coord2d.h for coord2e in /home/catuss_a//workspace/zappy
+** 
+** Made by axel catusse
+** Login   <catuss_a@epitech.net>
+** 
+** Started on  Fri Jun 10 18:37:55 2011 axel catusse
+** Last update Wed Jul  6 19:03:45 2011 christopher moreau
+*/
+
+#ifndef		COORD2D_H_
+# define	COORD2D_H_
+
+typedef struct		s_coord2d
+{
+  int			x;
+  int			y;
+}			t_coord2d;
+
+# endif /* !COORD2D_H_ */

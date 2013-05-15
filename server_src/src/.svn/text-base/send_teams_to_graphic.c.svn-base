@@ -1,0 +1,29 @@
+/*
+** send_teams_to_graphic.c for zappy in /home/moreau_c//repo/zappy/server_src/src
+** 
+** Made by christopher moreau
+** Login   <moreau_c@epitech.net>
+** 
+** Started on  Mon Jun 13 23:08:49 2011 christopher moreau
+** Last update Fri Jul  8 16:22:47 2011 christopher moreau
+*/
+
+#include <stdio.h>
+#include <string.h>
+
+#include "game.h"
+
+void		send_teams_to_graphic(t_game *game, int sock)
+{
+  unsigned int	i;
+  char		buff[512];
+
+  i = 0;
+  while (game->teams[i].name)
+    {
+      bzero(buff, sizeof(buff));
+      sprintf(buff, G_TEAM_NAME, game->teams[i].name);
+      sock_send(sock, buff);
+      ++i;
+    }
+}

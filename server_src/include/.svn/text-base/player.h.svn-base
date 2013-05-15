@@ -1,0 +1,46 @@
+/*
+** player.h for player in /home/catuss_a//workspace/zappy
+** 
+** Made by axel catusse
+** Login   <catuss_a@epitech.net>
+** 
+** Started on  Fri Jun 10 18:44:41 2011 axel catusse
+** Last update Fri Jul  8 16:20:08 2011 christopher moreau
+*/
+
+#ifndef		PLAYER_H_
+# define	PLAYER_H_
+
+typedef int	(*t_handle_player)(struct s_game *game,
+				   struct s_player *player,
+				   void *arg);
+
+extern char		*gl_objects[MAX_ITEMS];
+
+typedef struct		s_life
+{
+  unsigned int		nb;
+  struct timeval	delay;
+}			t_life;
+
+typedef struct		s_player
+{
+  int			num;
+  char			type;
+  t_teams		*team;
+  unsigned int		cur_action;
+  t_action		actions[MAX_ACTIONS];
+  t_coord2d		pos;
+  unsigned int		graphic_pos_x;
+  unsigned int		graphic_pos_y;
+  char			team_sent;
+  unsigned int		direction;
+  int			sock;
+  t_life		life;
+  unsigned int		level;
+  unsigned int		bag[MAX_ITEMS];
+  /* en attendant que usr soit abstrait et disco etc prenne juste la socket */
+  t_users		*gl_usr;
+}			t_player;
+
+#endif /* !PLAYER_H_ */

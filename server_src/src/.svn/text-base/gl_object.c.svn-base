@@ -1,0 +1,14 @@
+/*
+** gl_object.c for object in /home/catuss_a//workspace/zappy/server_src
+** 
+** Made by axel catusse
+** Login   <catuss_a@epitech.net>
+** 
+** Started on  Fri Jun 17 04:30:35 2011 axel catusse
+** Last update Fri Jun 17 04:30:38 2011 axel catusse
+*/
+
+char		*gl_objects[] = {
+  "nourriture", "linemate", "deraumere", "sibur", "mendiane",
+  "phiras", "thystame"
+};

@@ -1,0 +1,27 @@
+/*
+** find_if.c for list_wrapper in /home/lamais_g//SVN/list_wrapper
+** 
+** Made by gauthier lamaison
+** Login   <lamais_g@epitech.net>
+** 
+** Started on  Wed Apr 20 18:24:29 2011 gauthier lamaison
+** Last update Thu Jun 23 15:46:42 2011 gauthier lamaison
+*/
+
+#include <stdlib.h>
+#include "list_wrapper.h"
+
+void		*list_find_if(void *head, void *arg,
+			      char (*predicate)(void *ptr, void *arg))
+{
+  t_list	*parse;
+
+  parse = *(t_list **)head;
+  while (parse)
+    {
+      if (predicate(parse, arg) != 0)
+	return (parse);
+      parse = parse->next;
+    }
+  return (NULL);
+}

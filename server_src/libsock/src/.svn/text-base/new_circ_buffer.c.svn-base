@@ -1,0 +1,25 @@
+/*
+** new_circ_buff.c for zappy in /home/moreau_c//repo/zappy/libsock/src
+** 
+** Made by christopher moreau
+** Login   <moreau_c@epitech.net>
+** 
+** Started on  Thu Jun  9 22:15:32 2011 christopher moreau
+** Last update Thu Jun  9 22:16:03 2011 christopher moreau
+*/
+
+#include <stdlib.h>
+#include <string.h>
+
+#include "circ_buffer.h"
+
+t_circ_buffer*	new_circ_buffer(void)
+{
+  t_circ_buffer	*this;
+
+  this = (t_circ_buffer*)malloc(sizeof(t_circ_buffer));
+  if (this == NULL)
+    return (NULL);
+  bzero(this, sizeof(*this));
+  return (this);
+}

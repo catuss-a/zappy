@@ -1,0 +1,28 @@
+/*
+** sock_send.c for bomberman in /home/lamais_g//Projects/SystemUnix/libsock
+** 
+** Made by gauthier lamaison
+** Login   <lamais_g@epitech.net>
+** 
+** Started on  Tue Jun  7 16:15:32 2011 gauthier lamaison
+** Last update Sat Jul  9 01:34:35 2011 gauthier lamaison
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include "libsock.h"
+#include "private_libsock.h"
+#include "list_wrapper.h"
+
+extern t_sockserver	*g_server;
+
+int			sock_send(int sock, char const *msg)
+{
+  t_users		*user;
+
+  if (!(user = list_find_if(&g_server->users, (void*)sock,
+			       sock_find_user)))
+    return (-1);
+  write_to_buffer(user->tx_buffer, msg);
+  return (0);
+}
