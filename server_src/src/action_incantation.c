@@ -99,7 +99,7 @@ static void	rock_repartition(t_game *game, t_player *player)
 int		action_incantation(t_game *game, t_player *player,
 				   __attribute__((unused))unsigned int idx_action)
 {
-  char		msg[16];
+  char		msg[512];
 
   printf("incantation\n");
   if (check_incantation(game, player) == ERROR_VALUE)
