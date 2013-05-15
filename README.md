@@ -1,4 +1,4 @@
-zappy
+Zappy
 =====
 
 Zappy is an Automate game with a Graphic client and many IA's developed in cpp and a server developed in C.
